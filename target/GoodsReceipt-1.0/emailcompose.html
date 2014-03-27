@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+      
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=9;chrome=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="HandheldFriendly" content="true">
+        
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+<!--[if lt IE 9]>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+	<script src="//code.jquery.com/jquery-2.0.3.js"></script>
+<!--<![endif]-->
+
+
+         <title>GR PO Confirmation</title>
+
+    <!--        [if IE]
+            <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        [endif]-->
+       
+            <link rel="shortcut icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+  
+    <script type="text/javascript" charset="utf-8" src="js/frameworks/jquery-2.0.3.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/frameworks/datajs-1.1.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/frameworks/jquery-1.9.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/frameworks/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/frameworks/json2.js"></script>
+<link href="stylesheets/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="js/gulfmark/Controller.js?version=1.0.0.2"></script>
+    </head>
+   <body onbeforeunload="document.getElementById('section-loaderEmail').style.display = '';">
+        <div class="section-loader"></div>
+       <img src="images/section-loader.gif" id="section-loaderEmail"/>
+        <div class="mainContainer">
+            <div class="wrapperClass">
+                <section class="wrapper">
+                    <link href="stylesheets/invoice-home.css" media="screen, projection" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/screenC.css" media="screen, projection" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/fonts.css" media="screen, projection" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/invoice-details.css" media="screen, projection" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/model.css" media="screen, projection" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+                    <link href="stylesheets/invoice-details.css" media="screen, projection" rel="stylesheet" type="text/css" />
+                    <header class="main-header clearfix">
+                      <a id="back" onclick="location.href='GRPOConfirm.html'" class="back-btn">Back</a>
+                       <h1 class="logo"><a href="https://nwdev.gulfmark.com:8080/ContainerApplication-1.0/index.html#appstore">Gulf Mark Offshore</a></h1>
+                    <a id="logOutpoconfirm" href='javascript:createAlertMessage("Logout","Are you sure you want to Logout?","logOutpoconfirm","confirm","e")' class="logut-btn">Logout</a>
+                     </header>
+                    <div id="e-companyInfo" class="info-bar">
+                    </div><!-- .info-bar -->
+                    <section class="content-area">
+                        <div class="content-container clearfix" style="overflow: auto">
+                            <div class="scrollable-area" style="height: initial;">
+                                <ul class="compose-form clearfix">
+                                    <li>
+                                        <label for="">To</label>
+                                        <div class="form-element"><input id="to" type="email" /></div>
+                                    </li>
+                                    <li>
+                                        <label for="">Cc</label>
+                                        <div class="form-element"><input id="cc" type="email" /></div>
+                                    </li>
+                                    <li>
+                                        <label for="">Bcc</label>
+                                        <div class="form-element"><input id="bcc" type="email" /></div>
+                                    </li>
+                                    <li>
+                                        <label for="">Subject</label>
+                                        <div class="form-element"><input id="subject" type="text"/>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <label for="">Comments</label>
+                                        <div class="form-element"><textarea id="mailComments" name="Name" rows="2" cols="40" placeholder="Enter your comments here" ></textarea></div>
+                                    </li>
+                                    <li> 
+                                  <!--      <div class="form-element attachemnt-checkbox">
+                                            <input type="checkbox" tabindex="3" id="attachment"  class="regular-checkbox" />
+                                            <label id="attachLabel" for="attachment">
+                                                <a id="e-attachment" href="#"></a>
+                                            </label>
+                                        </div> -->
+                                    </li>
+                                    <li> 
+                                        <div class="form-element">
+                                            <input id="send1" type="submit"  onclick="sendemail()" class="submit-btn" value="Submit" />
+                                            <input id="cancel" type="submit" onclick="cancelemail()"class="cancel-btn" value="Cancel" />
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <h3 id="e-tableHeader" class="table-header"></h3>
+                          <!--      <table class="invoice-table">
+                                    <tr>
+                                        <th>PO No#</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-PoNo"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Doc/PR No#</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-DocNo"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>PO Date</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-Date"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vendor</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-vendor"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-Description"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>QTY</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-QTY"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Unit</th>
+                                        <td class="seperator">:</td>
+                                        <td id="e-Unit"></td>
+                                    </tr>
+                                </table> -->
+                                <h3 class="table-title" id="heading3">PO Conformation(s)</h3>
+                               <table class="main-grid-view">
+                                    <thead class="main-grid-view th">
+                                        <tr>
+                                              <th id="cPonumber">PO No#</th>
+                                            <th id="cdocprnumber">Doc/PR No#</th>
+                                            <th id="cpodate">PO Date</th>
+                                            <th id="cvendor">Vendor</th>
+                                            <th id="cdescription"style="width:30%">Description</th>
+                                            <th id="cQty">Qty</th>
+                                            <th id="cUnit">Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblPOConfirm">
+                                    </tbody>
+                                </table>
+                                <div class="section-loader"></div>
+                                <img src="images/section-loader.gif" style="display: none;"/>
+                            </div>
+                        </div>
+                    </section><!-- .content-area -->
+                    <div class="model-screen">
+                        <div class="model-container">
+                            <header><span id="header">Logout</span></header>
+                            <div class="model-body clearfix">
+                                <h5 id="alertMessage">Are you sure you want to logout?</h5>
+                                <input id="ok" type="submit" class="submit-btn" value="OK" />
+                                <input id="cancelAlert" type="submit" class="cancel-btn" value="Cancel" />
+                            </div>
+                        </div>
+                    </div><!-- .model-screen -->
+                </section><!-- .wraapper -->       
+                <!-- <div class="page-overlay"><span>Please <a href="#">Login</a> to view</span></div> -->
+            </div></div>
+    </body>
+      <script>
+       var vslname1 = localStorage.getItem("ddvesseldesc");
+       $('#heading3').html("PO Receipts for "+vslname1);
+       $('#subject').val( "PO Receipts for "+vslname1);
+        </script>
+</html>

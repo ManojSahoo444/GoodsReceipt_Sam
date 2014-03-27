@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html manifest="invoice.manifest">
+    <!--<html>-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
+        <meta name="viewport" content="width=device-width">  
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">  
+        <meta name="format-detection" content="telephone=no"> 
+
+        <title>Invoice Home</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+
+        <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+        <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <script type="text/javascript" charset="utf-8" src="js/frameworks/jquery-1.8.2.min.js"></script>      
+        <script type="text/javascript" charset="utf-8" src="js/frameworks/json-minified.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/gulfmark/network.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/gulfmark/Controller.js?version=1.0.0.2"></script>
+        <script type="text/javascript" charset="utf-8" src="js/gulfmark/Constants.js?version=1.0.0.3"></script>
+        <!--<script type="text/javascript" charset="utf-8" src="http://192.168.1.68:8081/target/target-script-min.js#anonymous"></script>-->  
+        <style type="text/css">
+            body{
+                display: none;
+            }
+        </style>
+        <script>
+            if (navigator.userAgent.match("Android")) {
+                document.write('<script src="js/frameworks/cordovaAndroid.js"><\/script>');
+            } else if (navigator.userAgent.match("iPhone") || navigator.userAgent.match("iPad") || navigator.userAgent.match("iPod")) {
+                document.write('<script src="js/frameworks/cordova.js"><\/script>');
+                document.write('<script src="js/frameworks/childbrowser.js"><\/script>');
+            }
+            document.write('<link href="stylesheets/fonts.css?r=' + Math.random() + '" rel="stylesheet" type="text/css" />');
+            document.write('<link href="stylesheets/invoice-details.css?r=' + Math.random() + '" rel="stylesheet" type="text/css" />');
+        </script>
+        <!--[if IE]>
+            <script>
+                $(window).load(function() {
+                    setTimeout(function() {
+                        var ss1 = document.createElement('style');
+                        var def = '@font-face {font-family:"robotobold_condensed"; src:url("fonts/roboto-boldcondensed-webfont.eot"); src: url("fonts/roboto-boldcondensed-webfont.eot?r=' + Math.random() + '#iefix") format("embedded-opentype"); font-weight: normal; font-style: normal;}';
+                        ss1.setAttribute("type", "text/css");
+                        var hh1 = document.getElementsByTagName('head')[0];
+                        hh1.appendChild(ss1);
+                        ss1.styleSheet.cssText = def;
+                    }, 100);
+
+                });
+                
+            </script>
+      <![endif]-->
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                CommonNamespace.initInvoiceApproval();
+            });
+        </script>
+    </body>
+</html>

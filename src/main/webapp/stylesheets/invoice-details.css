@@ -1,0 +1,251 @@
+.invoice-table {
+	border: 0;
+	width: 100%;
+	margin-bottom: -4px
+}
+.invoice-table th, .invoice-table td {
+	padding: 1px 4px
+}
+.invoice-table th {
+	color: #267ac3;
+	font: 1.188em "robotobold_condensed", Arial, Helvetica;
+	padding-left: 0;
+	width: 13.714953%
+}
+.invoice-table td {
+	color: #141b21;
+	font: 1.188em "robotocondensed", Arial, Helvetica
+}
+.invoice-table td.seperator {
+	width: 3%
+}
+.printHead {
+	display: none
+}
+input[type="text"], textarea {
+	-webkit-user-modify: read-write-plaintext-only
+}
+.view-button {
+	background: url(../images/invoice-btn.png) no-repeat 0 0;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	display: block;
+	width: 99px;
+	height: 123px;
+	text-indent: -9999px
+}
+.table-title {
+	margin: 1.5em 0 0.3em;
+	font: 1.188em "robotobold_condensed", Arial, Helvetica
+}
+.reject-btn, .approve-btn {
+	width: 99px;
+	height: 37px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	text-shadow: 0 1px rgba(0,0,0,0.24);
+	color: #fff;
+	cursor: pointer;
+	margin-left: 16px;
+	font: 1em/0.6em "robotobold_condensed", Arial, Helvetica;
+	position: relative;
+	padding-left: 23px;
+	display: inline-block;
+	z-index: 999
+}
+.reject-btn:before, .approve-btn:before {
+	content: '';
+	width: 17px;
+	height: 14px;
+	display: block;
+	position: absolute;
+	top: 12px;
+	left: 9px
+}
+.approve-btn {
+	background-color: #71bc5b;
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.24);
+	-moz-box-shadow: 0 1px 0px rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.24);
+	box-shadow: 0 1px 0px rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.24);
+	border: solid 1px #4f9631;
+	background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(0,0,0,0.28)), color-stop(100%, rgba(255,255,255,0)));
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: -ms-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0))
+}
+.approve-btn:hover, .approve-btn:active {
+	-webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.24);
+	-moz-box-shadow: inset 0 0 8px rgba(0,0,0,0.24);
+	box-shadow: inset 0 0 8px rgba(0,0,0,0.24)
+}
+.approve-btn:before {
+	background: url(../images/check.png) no-repeat 0 0
+}
+.reject-btn {
+	background-color: #ee4547;
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.24);
+	-moz-box-shadow: 0 1px 0px rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.24);
+	box-shadow: 0 1px 0px rgba(0,0,0,0.2), inset 0 1px rgba(255,255,255,0.24);
+	border: solid 1px #9f3636;
+	background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(0,0,0,0.28)), color-stop(100%, rgba(255,255,255,0)));
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0));
+	background-image: -ms-linear-gradient(bottom, rgba(0,0,0,0.28), rgba(255,255,255,0))
+}
+.reject-btn:hover, .reject-btn:active {
+	-webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.24);
+	-moz-box-shadow: inset 0 0 8px rgba(0,0,0,0.24);
+	box-shadow: inset 0 0 8px rgba(0,0,0,0.24)
+}
+.reject-btn:before {
+	background: url(../images/uncheck.png) no-repeat 0 0
+}
+.table-header {
+	font-size: 1.250em
+}
+.compose-form {
+	width: 100%;
+	display: block
+}
+.compose-form label {
+	float: left;
+	margin: 12px 0 0
+}
+.compose-form .form-element {
+	width: 80.64485981308411%;
+	float: right
+}
+.compose-form .form-element.attachemnt-checkbox {
+	margin: 10px 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 25px
+}
+.compose-form .form-element.attachemnt-checkbox label {
+	background: url(../images/attach-icon.png) no-repeat 30px 0;
+	padding-left: 60px;
+	margin: 0
+}
+.checkBoxHandler .compose-form .form-element.attachemnt-checkbox label {
+	background-position: 2px 0;
+	padding-left: 30px;
+	padding-bottom: 6px;
+	vertical-align: top
+}
+.compose-form .form-element.attachemnt-checkbox a {
+	color: #0f5088
+}
+.compose-form li {
+	float: left;
+	width: 100%;
+	margin-bottom: 9px
+}
+.compose-form input[type=text]:-ms-input-placeholder, .compose-form textarea:-ms-input-placeholder {
+color:#a9a9a9
+}
+.compose-form .submit-btn {
+	margin-right: 16px
+}
+input[type=text], input[type=email], textarea {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	-webkit-box-shadow: inset 0 4px 4px rgba(0,0,0,0.03);
+	-moz-box-shadow: inset 0 4px 4px rgba(0,0,0,0.03);
+	box-shadow: inset 0 4px 4px rgba(0,0,0,0.03);
+	border: solid 1px rgba(0,0,0,0.14);
+	padding: 10px;
+	font: 1em Arial, Helvetica, sans-serif;
+	color: #000;
+	resize: none;
+	width: 99.5%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 7px rgba(0,128,255,0.34);
+	-moz-box-shadow: 0 0 7px rgba(0,128,255,0.34);
+	box-shadow: 0 0 7px rgba(0,128,255,0.34);
+	border: solid 1px #b2cce8;
+	outline: none
+}
+.page-overlay {
+	background: #d2dde3;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0
+}
+.page-overlay a {
+	color: #4ba5d8
+}
+.page-overlay span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 160px;
+	height: 30px;
+	margin: -15px 0 0 -80px
+}
+.reject-form textarea {
+	margin-bottom: 27px
+}
+.reject-form input {
+	float: left;
+	margin-right: 16px
+}
+.invoice-actions {
+	padding-bottom: 20px
+}
+@media (min-width: 481px) {
+.invoice-container {
+	position: relative
+}
+#view-invoice-btn01 {
+	position: absolute;
+	bottom: 0;
+	right: 0
+}
+.invoice-actions {
+	display: block;
+	text-align: right
+}
+}
+@media (max-width: 480px) {
+.invoice-table th {
+	width: 38.715%
+}
+.invoice-container {
+	position: relative
+}
+#view-invoice-btn01 {
+	position: absolute;
+	right: 7px;
+	top: 3px;
+	height: 57px;
+	width: 47px
+}
+.invoice-actions {
+	display: block;
+	text-align: center
+}
+.reject-btn, .approve-btn {
+	display: inline-block;
+	float: none;
+	width: 80px
+}
+}

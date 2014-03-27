@@ -1,0 +1,47 @@
+CACHE MANIFEST
+
+#version 1.1.0.4
+CACHE:
+
+#css files
+stylesheets/fonts.css
+stylesheets/ie.css
+stylesheets/invoice-details.css
+stylesheets/invoice-home.css
+stylesheets/model.css
+stylesheets/print.css
+stylesheets/screen.css
+
+
+#js files
+js/frameworks/cordova.js
+js/frameworks/jquery-1.8.2.min.js
+js/frameworks/json-minified.js
+js/frameworks/childbrowser.js
+js/frameworks/cordovaAndroid.js
+js/frameworks/cordovaIOS.js
+js/frameworks/phonegap.js
+js/gulfmark/Constants.js
+js/gulfmark/Controller.js
+
+#images
+images/appstore.png
+images/arrow.png
+images/blank.png
+images/attach-icon.png
+images/back-btn.png
+images/blank.png
+images/check.png
+images/checkbox-check.png
+images/favicon.ico
+images/favicon.png
+images/invoice-btn.png
+images/logo.png
+images/logout-btn-mobile.png
+images/section-loader.gif
+images/sprites-sd5ab0f708a.png
+images/uncheck.png
+
+# Use from network if available
+NETWORK:
+*
